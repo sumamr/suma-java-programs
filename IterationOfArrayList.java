@@ -21,12 +21,12 @@ public class IterationOfArrayList {
 			li.add(e);
 		}
 		System.out.println("Using list "+li);
-		//using normal forloop
+		//using normal for loop
 		for(int i=0;i<li.size();i++)
 		{
 			System.out.println(li.get(i));
 		}
-		//using enhanced forloop for each
+		//using enhanced for loop for each
 		for(Integer i:li)
 		{
 			System.out.println(i);
