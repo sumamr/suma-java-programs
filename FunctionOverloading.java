@@ -1,36 +1,45 @@
-package edubridgesuma;
-
-
-class Addandsub
+package zayba.com;
+class Overload
 {
-	
-	void add(int i,int j)
+	void display()
 	{
-		int s=i+j;
-		System.out.println("Integer sum is "+s);
+		System.out.println("No argument display");
 	}
-	void add(float i,float j)
+	void display(int i)
 	{
-		 float s=i+j;
-		System.out.println("Float sum is "+s);
+		System.out.println("int one argument function "+i);
 	}
-	void add(double i,double j)
+	void display(float i)
 	{
-		double s=i+j;
-		System.out.println("double sum is "+s);
+		System.out.println("float one argument functions "+i);
+	}
+	void display(int i,int j)
+	{
+		System.out.println("two int argument functions "+i+" and "+j);
+	}
+	void display(int i,int j,int k)
+	{
+		System.out.println("Three int argument functions "+i+" and "+j+" and "+k);
+	}
+	void display(float i,float j)
+	{
+		System.out.println("Two float arguments "+i+" and "+j );
+	}
+	void display(float i,int j)
+	{
+		System.out.println("float and int two arguments "+i+" and "+j);
 	}
 }
-	
 
 public class FunctionOverloading {
 
 	public static void main(String[] args) {
-		Addandsub ad=new Addandsub();
-		ad.add(12,34);
-		ad.add(23.4f,67.4f);
-		ad.add(23.56,56.78);
-		
-
+		Overload fo=new Overload();
+		fo.display();
+		fo.display(2.0f,7);
+		fo.display(7,8);
+		fo.display(1.2f,6.6f);
 	}
+
 
 }
