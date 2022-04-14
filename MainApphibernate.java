@@ -1,4 +1,7 @@
 package suma.com;
+import java.util.Iterator;
+
+import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
@@ -22,10 +25,22 @@ public class MainApphibernate {
  //to get the record based on id
  //select * from edustudent where sid=1
  
- Student s=  (Student) sess.get(Student.class,1);
- System.out.println(s);
+ //Student s=  (Student) sess.get(Student.class,1);
+ //System.out.println(s);
  
-			        
+	// for retrieve all records
+ //Query q=sess.createQuery("from Student");// Student is a class name
+ //Iterator<Student> s=q.iterate();
+ //while(s.hasNext()) {
+	// Student st=s.next();
+	 //System.out.println(st.getSid()+" "+st.getSname());
+ //}
+ 
+ 
+ //for deleting a record
+ Student s=new Student();
+ s.setSid(4);
+ sess.delete(s);
  //sess.save(sob);
 tx.commit();
 
