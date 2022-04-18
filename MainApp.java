@@ -1,34 +1,41 @@
-package suma.com;
-import org.hibernate.Session;
-import org.hibernate.SessionFactory;
-import org.hibernate.Transaction;
-import org.hibernate.cfg.Configuration;
-import org.hibernate.service.ServiceRegistry;
-import org.hibernate.service.ServiceRegistryBuilder;
+package preparedStatements;
 
+import java.util.Scanner;
 
 public class MainApp {
 
 	public static void main(String[] args) {
-		Student sob=new Student();
-		//sob.setSid(1);
-		sob.setSname("Sudha");
-					
- Configuration conn=new Configuration().configure().addAnnotatedClass(Student.class);		        
- ServiceRegistry reg=new ServiceRegistryBuilder().applySettings(conn.getProperties()).buildServiceRegistry();
- SessionFactory sf=conn.buildSessionFactory(reg);
- Session sess=sf.openSession();
- Transaction tx=sess.beginTransaction();
-			        
- sess.save(sob);
-tx.commit();
-
-
+		//input from user
+		Scanner sc=new Scanner(System.in);
+		while(true)
+		{
+			System.out.println("DataBase operations");
+			System.out.println("enter your choice");
+			System.out.println("1.To display Student information");
+			System.out.println("2.Insert Student record");
+			System.out.println("3.Update student information based on id");
+			System.out.println("4.Delete student information based on id");
+			System.out.println("5.Select Student based on ID");
+			int ch=sc.nextInt();
+			switch(ch)
+			{
+			case 1:DataBaseOperations.displayRecords();
+			       break;
+			case 2:DataBaseOperations.addRecords();
+			          break;
+			case 3: DataBaseOperations.updateRecords();
+			        break;
+			default: System.out.println("invalid choice");
 			}
-
+			System.out.println("Do you want to continue yes/no");
+			String choice=sc.next();
+			if(choice.equalsIgnoreCase("no"))
+			{
+				break;
+			}
 		}
+		System.out.println("Program terminated");
 
+	}
 
-	
-
-
+}
