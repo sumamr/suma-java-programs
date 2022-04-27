@@ -1,26 +1,41 @@
-package com.edu;
-import org.springframework.context.ApplicationContext;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
+package preparedStatements;
+
+import java.util.Scanner;
 
 public class MainApp {
-	
-			public static void main(String[] args)
+
+	public static void main(String[] args) {
+		//input from user
+		Scanner sc=new Scanner(System.in);
+		while(true)
+		{
+			System.out.println("DataBase operations");
+			System.out.println("enter your choice");
+			System.out.println("1.To display Student information");
+			System.out.println("2.Insert Student record");
+			System.out.println("3.Update student information based on id");
+			System.out.println("4.Delete student information based on id");
+			System.out.println("5.Select Student based on ID");
+			int ch=sc.nextInt();
+			switch(ch)
 			{
-			//get the object
-				ApplicationContext ctx=new ClassPathXmlApplicationContext("Spring.xml");
-				     Employee e1=(Employee) ctx.getBean("empobj");
-				     e1.display();
-				     
-				     Employee e2=(Employee) ctx.getBean("empobj1");
-				     e2.display();
-				     
-				     Employee e3=(Employee) ctx.getBean("empobj2");
-				     e3.display();
-				    
+			case 1:DataBaseOperations.displayRecords();
+			       break;
+			case 2:DataBaseOperations.addRecords();
+			          break;
+			case 3: DataBaseOperations.updateRecords();
+			        break;
+			default: System.out.println("invalid choice");
 			}
-
+			System.out.println("Do you want to continue yes/no");
+			String choice=sc.next();
+			if(choice.equalsIgnoreCase("no"))
+			{
+				break;
+			}
 		}
+		System.out.println("Program terminated");
 
+	}
 
-
-
+}
