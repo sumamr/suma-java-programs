@@ -1,15 +1,14 @@
-package Studentproject;
+package suma.com;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
-// Database  connection  information
 
 public class Dbconnect {
 	static String driver="com.mysql.cj.jdbc.Driver";
 	static String url="jdbc:mysql://localhost:3306/mydatabase";
-	 static String un="root";
+	static String un="root";
 	static String pa="root";
-	static Connection con=null;
+	static Connection con;
 	
 	public static Connection getConnection()
 	{
@@ -19,7 +18,7 @@ public class Dbconnect {
 			con=DriverManager.getConnection(url, un, pa);
 			if(con==null)
 			{
-				System.out.println("Error in connection");
+				System.out.println("Connection object is null");
 			}
 			
 		}
@@ -28,6 +27,12 @@ public class Dbconnect {
 			e.printStackTrace();
 		}
 		return con;
-	}
+		
 
 }
+
+	
+	
+}
+
+
