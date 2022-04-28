@@ -1,57 +1,26 @@
-package suma.com;
-
-import java.util.Scanner;
+package com.edu;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 public class MainApp {
-
-	public static void main(String[] args) {
-		Scanner sc=new Scanner(System.in);
-		while(true) {
-			System.out.println("Database Operation");
-			System.out.println("****WELCOME TO STUDENT MANAGEMENT SYSTEM****");
-			System.out.println("Enter your choice");
-			System.out.println("********");
-			System.out.println("1.To display Student information");
-			System.out.println("2.Insert Student Record ");
-			System.out.println("3.update Student Record Based on ID");
-			System.out.println("4.Delete Student Record Based on ID ");
-			System.out.println("5.Select Student Information Based on ID");
-			int ch=sc.nextInt();
-			
-			switch(ch) {
-			case 1:StudentDataOperation.displayStudentInfo();
-			        break;
-			case 2:StudentDataOperation.insertStudentinfo();
-			        break;
-			case 3:StudentDataOperation.updateStudentinfo();
-			        break;
-			case 4:StudentDataOperation.deleteStudentinfo();
-			        break;
-			case 5:StudentDataOperation.selectStudentInfo();
-			        break;
-			default:System.out.println("Invalid choice...");
+	
+			public static void main(String[] args)
+			{
+			//get the object
+				ApplicationContext ctx=new ClassPathXmlApplicationContext("Spring.xml");
+				     Employee e1=(Employee) ctx.getBean("empobj");
+				     e1.display();
+				     
+				     Employee e2=(Employee) ctx.getBean("empobj1");
+				     e2.display();
+				     
+				     Employee e3=(Employee) ctx.getBean("empobj2");
+				     e3.display();
+				    
 			}
-			
-			System.out.println("DO YOU WANT TO CONTINUE yes/no");
-			
-			System.out.println("************");
+
+		}
 
 
 
-            String choice=sc.next();
-            if(choice.equalsIgnoreCase("no")) {
-            	break;
-            }//if
 
-
-			}//while
-			
-           System.out.println("Program terminated");
-			System.out.println("************");
-			System.out.println("THANKS FOR USING THIS APPLICATION");
-
-
-
-	}
-
-}
