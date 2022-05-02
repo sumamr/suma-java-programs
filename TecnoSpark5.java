@@ -1,25 +1,31 @@
 package com.edu;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
 @Component
 public class TecnoSpark5 {
-	
 	@Autowired
-	MobileProcessor mp;
+//	@Qualifier("snapDragon")
+	@Qualifier("oppo")
+	MobileProcessor mpt;
 
-	public MobileProcessor getMp() {
-		return mp;
+	public MobileProcessor getMpt() {
+		return mpt;
 	}
 
-	public void setMp(MobileProcessor mp) {
-		this.mp = mp;
+	public void setMpt(MobileProcessor mpt) {
+		this.mpt = mpt;
 	}
-	public void MobileFun()
+	  
+	
+	public void tecnoFun()
 	{
-		System.out.println("2GB RAM,dual sim,14 px Camera");
-		mp.Processor();
+		System.out.println("2GB RAM,Dual Camera");
+		mpt.Processor();
 	}
+	
+	
 
 }
