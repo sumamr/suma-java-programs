@@ -1,12 +1,15 @@
 package com.edu;
 
+import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Component;
 
 @Component
-public class SnapDragon implements MobileProcessor{
+//@Primary
+public class SnapDragon implements MobileProcessor {
 
 	public void Processor() {
-		System.out.println("Worlds Best Processor");
+		System.out.println("SnapDragon Run");
+		
 		
 	}
 	
