@@ -1,9 +1,9 @@
 package com.edu;
 
 import org.springframework.context.annotation.ComponentScan;
-import org.springframework.stereotype.Component;
+import org.springframework.context.annotation.Configuration;
 
-@Component
+@Configuration
 @ComponentScan(basePackages="com.edu")
 public class AppConfig {
 
