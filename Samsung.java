@@ -1,25 +1,22 @@
 package com.edu;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
 
-@Component
 public class Samsung {
-    @Autowired
-    MobileProcessor mp;
+	@Autowired
+	MobileProcessor mcpu;
 
-	public MobileProcessor getMp() {
-		return mp;
+	public MobileProcessor getMcpu() {
+		return mcpu;
 	}
 
-	public void setMp(MobileProcessor mp) {
-		this.mp = mp;
+	public void setMcpu(MobileProcessor mcpu) {
+		this.mcpu = mcpu;
 	}
-    
-    void phConfig()
-    {
-    	System.out.println("128 mp camera,64 mb Ram,Dual core");
-    	mp.processor();
-    }
-    
+   public void MobileConfig()
+   {
+	   System.out.println("8gb Ram Dual Core 128px camera");
+   }
+	
+
 }
